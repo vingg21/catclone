@@ -220,27 +220,7 @@ public:
         nSupplyBeforeFakeSerial = 0 * COIN;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
 
-        if(genesis.GetHash() != uint256("0x"))
-                {
 
-                    {
-                        ++genesis.nNonce;
-                        if (genesis.nNonce == 0)
-                        {
-                            printf("NONCE WRAPPED, incrementing time");
-                            std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                            ++genesis.nTime;
-                        }
-                        if (genesis.nNonce % 10000 == 0)
-                        {
-                            printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str(), genesis.hashMerkleRoot.ToString().c_str());
-                        }
-                    }
-                    printf("block.nTime = %u \n", genesis.nTime);
-                    printf("block.nNonce = %u \n", genesis.nNonce);
-                    printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-                    printf("block.merklehash = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-                }
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
@@ -268,7 +248,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
 
-		    assert(hashGenesisBlock == uint256("0x00000bd1373e21321bedf06353cc1a3ad734591f5ad6bdb65628b98e99753166"));
+		    assert(hashGenesisBlock == uint256("0x0ac5d349d0b5b74c4d8ace7d54bc6520b3232b0bcfa34c986b87da837ad6841c"));
         assert(genesis.hashMerkleRoot == uint256("0x25e4a2dba5c013c3bd12051430d2aa70c26ba286585f823615738ac5712f0db6"));
 
         //vSeeds.push_back(CDNSSeedData("95.179.155.62", "95.179.155.62"));
