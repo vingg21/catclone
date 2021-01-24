@@ -53,25 +53,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x00000bd1373e21321bedf06353cc1a3ad734591f5ad6bdb65628b98e99753166"))
-	(12, uint256("0x00000a79a058f0c9bdf80ff22898706c3306832d8a3c25e538306b5dec6113de"))
-	(453, uint256("0xca1e60d46dfd2037e19fbe1614f88bfac838b2188beaf9ad4df93b8c0b45b236"))
-	(3574, uint256("0x24fd00f880a7b44efa77751907bd5396e364fa5ffea06b619c2082b4f84ca586"))
-	(9047, uint256("0xd12973edecd61ede506a3e6eb3d4a9c0de24eccb2c733c8ef6a54ee13467603c"))
-	(15246, uint256("0x797440264958a2bdd067a855a7e2033992c6d3168385421d8ebb5d01568b4fae"))
-	(21498, uint256("0x0fc9461cd6696e883520fde5fd485e8b271b3a87034a09ed220eab13ed05c196"))
-	(39452, uint256("0xc1c20e3632e1170d46d2cd0dcafc47db073622c35403c17300f9ff839f184b6a"))
-	(45187, uint256("0xbe72e1eaef16888a0140daccc2276e63968fc9ca7f600235f1b6f3fc3b876a47"))
-	(57363, uint256("0x7ec61393a088dae61d3cef42739ebf608569235a116191e209bacdd61fe70700"))
-	(69215, uint256("0x434b592f0b5106aa16577e1e21a65ea0b84b28f2e9d2977356bec928baab45c5"))
-	(75887, uint256("0x675851e4738b86fdbaf3c0ac12df4b6f4cc14816984733a2fc20ae47af88eab1"))
-        (176830, uint256("0x789efa7682844d1b26f53694c2aefd96dff012d6b0ed4af89466fce53a53e582"))
-	(196438, uint256("0xa89ef481d6c93bb8fe11d3f014f424fcc114eb0a6eec15908d9a6fafb3cb4219"))
-	;
+	(0, uint256("0x00000fb0ba73250defbf0903e90c1b226f22627d9719f2fed9f3983a5a8d224f"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-	1595395950, // * UNIX timestamp of last checkpoint block
-	153163,    // * total number of transactions between genesis and last checkpoint
+	1611497112, // * UNIX timestamp of last checkpoint block
+	0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -231,7 +217,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "We love cats 2121 Now and forever";
+        const char* pszTimestamp = "cats coins dev 1 test 2021";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -242,14 +228,14 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
         genesis.nVersion = 1;
-        genesis.nTime = 1611496372;
+        genesis.nTime = 1611497112;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 5544210;
+        genesis.nNonce = 30099;
 
         hashGenesisBlock = genesis.GetHash();
 
-		    assert(hashGenesisBlock == uint256("0x0ac5d349d0b5b74c4d8ace7d54bc6520b3232b0bcfa34c986b87da837ad6841c"));
-        assert(genesis.hashMerkleRoot == uint256("0x25e4a2dba5c013c3bd12051430d2aa70c26ba286585f823615738ac5712f0db6"));
+		    assert(hashGenesisBlock == uint256("0x00000fb0ba73250defbf0903e90c1b226f22627d9719f2fed9f3983a5a8d224f"));
+        assert(genesis.hashMerkleRoot == uint256("0xdae20fc3a30126f49e9bb4e73347df2d932cebcb14de20629d5a2ff2019b78af"));
 
         //vSeeds.push_back(CDNSSeedData("95.179.155.62", "95.179.155.62"));
         //vSeeds.push_back(CDNSSeedData("45.32.206.236", "45.32.206.236"));
