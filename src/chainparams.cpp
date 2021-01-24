@@ -229,24 +229,24 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "We love cats 2021 January";
+        const char* pszTimestamp = "We love cats 2121 Now and forever";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("043c7ff1e3163537b12dde14a17bfd497c607f96ad73d87706035f62064e10e3e408b5cd7da97facecfc38d207a7ac35a9826b9b2ddf85a29d90f9df030e414da3") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04f7aef912d94dcdf7f8e1a2e4467a5272016731a82c5b10a5069eea7c8198b0fe84283092e32d5075bd5fdf5178d016acc013c971e564ba6dbe2e751a6178df9b") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
         genesis.nVersion = 1;
-        genesis.nTime = 1611495199;
+        genesis.nTime = 1611495649;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 5544210;
+        genesis.nNonce = 5544211;
 
         hashGenesisBlock = genesis.GetHash();
 
-		assert(hashGenesisBlock == uint256("0x00000bd1373e21321bedf06353cc1a3ad734591f5ad6bdb65628b98e99753166"));
+		    assert(hashGenesisBlock == uint256("0x00000bd1373e21321bedf06353cc1a3ad734591f5ad6bdb65628b98e99753166"));
         assert(genesis.hashMerkleRoot == uint256("0x25e4a2dba5c013c3bd12051430d2aa70c26ba286585f823615738ac5712f0db6"));
 
         vSeeds.push_back(CDNSSeedData("95.179.155.62", "95.179.155.62"));
@@ -261,7 +261,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x72).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
@@ -276,10 +276,10 @@ public:
 
         nPoolMaxTransactions = 3;
         nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-        strSporkPubKey = "043c7ff1e3163537b12dde14a17bfd497c607f96ad73d87706035f62064e10e3e408b5cd7da97facecfc38d207a7ac35a9826b9b2ddf85a29d90f9df030e414da3";
-        strSporkPubKeyOld = "043c7ff1e3163537b12dde14a17bfd497c607f96ad73d87706035f62064e10e3e408b5cd7da97facecfc38d207a7ac35a9826b9b2ddf85a29d90f9df030e414da3";
+        strSporkPubKey = "044485c9c5bac66a022704eea93383bbaa1a82fbb9f36ef7949fbb47bdf705edd84084d896f075b62ef215ddc73cdcced090ee1e70296debd9a56b72e301930606";
+        strSporkPubKeyOld = "04b010f0de7ddfc82731db44c151212d6e37cf463dda899c274080094cb6e097ed87d589dba422827028176c12ca96f4e7c21c8d9381d71c3fcac1fdef5e5d4456";
         strObfuscationPoolDummyAddress = "CNA8jti7deabJ7vyJCTtFMkyW2t9aCaNVb";
-        nStartMasternodePayments = 1611495199;
+        nStartMasternodePayments = 1576920000;
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
