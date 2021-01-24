@@ -53,7 +53,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x5a8faaf43984b6b6850f4efb6b0577fe78d623c117c6c5cd44927b4dfc54354c"));
+	(0, uint256("0x000002744fbfbbe18686718e858703466a8d8d0ea1f4fee574784aadeb9fdd18"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
 	1611480917, // * UNIX timestamp of last checkpoint block
@@ -215,7 +215,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "You love cats";
+        const char* pszTimestamp = "Retrex January 22 2021 Node Starts";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -228,14 +228,14 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1611480917;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 5544211;
+        genesis.nNonce = 1249923;
 
 
 
         hashGenesisBlock = genesis.GetHash();
 
-		    assert(hashGenesisBlock == uint256("0x5a8faaf43984b6b6850f4efb6b0577fe78d623c117c6c5cd44927b4dfc54354c"));
-        assert(genesis.hashMerkleRoot == uint256("0x48a0e0a26248681d9da4853d342272acf17e94b18e1f3952efe5cd938cb0852e"));
+		    assert(hashGenesisBlock == uint256("0x000002744fbfbbe18686718e858703466a8d8d0ea1f4fee574784aadeb9fdd18"));
+        assert(genesis.hashMerkleRoot == uint256("0xf70b9ee426cb739580d72c7e5c955100d0ecae1a2eccd7f78789bb4ffc8c2417"));
 
         vSeeds.push_back(CDNSSeedData("0", "95.179.136.229"));             // Primary DNS Seeder
         vSeeds.push_back(CDNSSeedData("1", "136.244.115.65"));      // Secondary DNS Seeder
