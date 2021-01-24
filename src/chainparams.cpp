@@ -53,10 +53,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x00000d9a73df06c1a3915cb718502fc8d4c60fd462ef2eccf04d1a97fc97896c"));
+	(0, uint256("0x6a2fe4dc4be5e1fa71a86d662a17ffe1901c9b2aaddefad359fa64c9fe193d3c"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-	1611497112, // * UNIX timestamp of last checkpoint block
+	1611500114, // * UNIX timestamp of last checkpoint block
 	0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -66,7 +66,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1611497112,
+    1611500114,
     0,
     250};
 
@@ -74,7 +74,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1611497112,
+    1611500114,
     0,
     100};
 
@@ -217,7 +217,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "cats coins dev 1 test 2021";
+        const char* pszTimestamp = "24 January 2021";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -228,13 +228,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
         genesis.nVersion = 1;
-        genesis.nTime = 1611497112;
-        genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 761752;
+        genesis.nTime = 1611500114;
+        genesis.nBits =  0x207fffff;
+        genesis.nNonce = 12345;
 
         hashGenesisBlock = genesis.GetHash();
 
-		    assert(hashGenesisBlock == uint256("0x1b60d1fd099ab8262da6aff9e92b1b1efcb6455df74dbb40e1d08cf962cf5be1"));
+		    assert(hashGenesisBlock == uint256("0x6a2fe4dc4be5e1fa71a86d662a17ffe1901c9b2aaddefad359fa64c9fe193d3c"));
         assert(genesis.hashMerkleRoot == uint256("0xdae20fc3a30126f49e9bb4e73347df2d932cebcb14de20629d5a2ff2019b78af"));
 
         //vSeeds.push_back(CDNSSeedData("95.179.155.62", "95.179.155.62"));
