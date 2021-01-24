@@ -230,11 +230,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1611497112;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1739738;
+        genesis.nNonce = 761752;
 
         hashGenesisBlock = genesis.GetHash();
 
-		    assert(hashGenesisBlock == uint256("0x00000d9a73df06c1a3915cb718502fc8d4c60fd462ef2eccf04d1a97fc97896c"));
+		    assert(hashGenesisBlock == uint256("0x1b60d1fd099ab8262da6aff9e92b1b1efcb6455df74dbb40e1d08cf962cf5be1"));
         assert(genesis.hashMerkleRoot == uint256("0xdae20fc3a30126f49e9bb4e73347df2d932cebcb14de20629d5a2ff2019b78af"));
 
         //vSeeds.push_back(CDNSSeedData("95.179.155.62", "95.179.155.62"));
