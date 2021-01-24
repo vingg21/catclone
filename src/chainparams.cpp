@@ -259,7 +259,7 @@ public:
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("043c7ff1e3163537b12dde14a17bfd497c607f96ad73d87706035f62064e10e3e408b5cd7da97facecfc38d207a7ac35a9826b9b2ddf85a29d90f9df030e414da3"") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("043c7ff1e3163537b12dde14a17bfd497c607f96ad73d87706035f62064e10e3e408b5cd7da97facecfc38d207a7ac35a9826b9b2ddf85a29d90f9df030e414da3") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
