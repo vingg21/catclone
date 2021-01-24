@@ -246,8 +246,6 @@ public:
 
         if(genesis.GetHash() != uint256("0x"))
                 {
-                    printf("Searching for genesis block...\n");
-                    while(uint256(genesis.GetHash()) > hashTarget)
                     {
                         ++genesis.nNonce;
                         if (genesis.nNonce == 0)
